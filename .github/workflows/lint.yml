@@ -1,0 +1,21 @@
+name: lint
+on:
+  - push
+  - workflow_dispatch
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out code
+        uses: actions/checkout@main
+      - name: tflint
+        uses: devops-infra/action-tflint@v0.3
+      - name: terraform-fmt
+        uses: actionshub/terraform-lint@2.0.1
+      - name: pylint
+        shell: bash
+        run: |
+          set -e
+          pip install pylint --quiet
+          pylint code

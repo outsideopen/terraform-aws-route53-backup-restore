@@ -1,0 +1,11 @@
+[FORMAT]
+max-line-length=120
+
+[MESSAGES CONTROL]
+disable=fixme,
+        cell-var-from-loop,
+        unused-argument,
+        import-error
+
+[REPORTS]
+output-format = colorized

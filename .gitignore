@@ -1,0 +1,9 @@
+.terraform*
+.terraform.lock.hcl
+terraform.tfstate*
+.idea
+.vscode
+*.tfvars
+*.tfstate
+Pipfile
+route53_code.zip
