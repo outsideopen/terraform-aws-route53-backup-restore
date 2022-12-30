@@ -184,6 +184,8 @@ data "aws_iam_policy_document" "restore" {
 }
 
 resource "aws_iam_policy" "restore" {
+  count = var.enable_restore ? 1 : 0
+
   name        = local.policy_restore_name
   description = "Route53 Restore Policy"
   policy      = data.aws_iam_policy_document.restore.json
